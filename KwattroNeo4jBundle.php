@@ -10,7 +10,8 @@ class KwattroNeo4jBundle extends Bundle
 
 	public function boot()
 	{
-		$dir = $this->container->getParameter('kwattro_neo4j.proxy_dir');
+		// $dir = $this->container->getParameter('kwattro_neo4j.proxy_dir');
+		$dir = $this->container->getParameter('kernel.cache_dir') . '/doctrine/neo4j/Proxies';
 
 		$this->autoloader = function($class) use ($dir, &$container) {
 		$filename = $class;
